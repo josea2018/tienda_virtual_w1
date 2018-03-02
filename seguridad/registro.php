@@ -9,7 +9,11 @@
     $contrasenna = isset($_POST['contrasenna']) ? $_POST['contrasenna'] : '';
     $confirmar_contrasenna = isset($_POST['confirmar_contrasenna']) ? $_POST['confirmar_contrasenna'] : '';
     $tipo = 'c';
-    if ($contrasenna != $confirmar_contrasenna) {
+
+    if($cedula == '' || $nombre == '' || $email == '' || $contrasenna == ''){
+      echo "<h3>No se logró, complete todos los campos</h3>";
+    }
+    else if($contrasenna != $confirmar_contrasenna) {
       echo "<h3>Las contraseñas no coinciden</h3>";
     } else {
       $usuario_model->insertar($cedula, $nombre, $email, $contrasenna, $tipo);
@@ -17,7 +21,7 @@
       return header("Location: ../seguridad/login.php");
     }
   }
-  //include '../shared/header.php';
+  include '../shared/header.php';
 ?>
   <form method="POST">
     <label>Cédula: </label>
@@ -39,6 +43,6 @@
     <a href="../seguridad/login.php">Login</a>
   </form>
 <?php
-//include '../shared/footer.php';
+ include '../shared/footer.php';
 ?>
 
