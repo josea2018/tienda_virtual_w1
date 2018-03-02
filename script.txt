@@ -7,3 +7,26 @@ create table usuarios
 	contrasenna varchar not null,
 	tipo varchar(1) not null
 );
+
+
+create table departamentos
+(
+ 	id_departamento varchar primary key not null,
+	nombre varchar not null
+);
+
+
+
+create table articulos
+(
+	id_articulo varchar primary key not null,
+	id_departamento varchar foreign key not null,
+	descripcion varchar not null,
+	precio double precision not null,
+	existencia int not null
+);
+
+
+
+ALTER TABLE articulos ADD CONSTRAINT FK_Articulos_CATE_PROD_Departamento FOREIGN KEY(id_departamento)
+REFERENCES departamentos (id_departamento);

@@ -3,7 +3,8 @@
 require_once '../db/BaseConnection.php';
 require_once '../db/PostgresConnection.php';
 require_once '../db/MySqlConnection.php';
-require_once '../Models/Usuario.php';
+require_once '../models/Usuario.php';
+require_once '../models/Departamento.php';
 
 $db_class = getenv('DB_CLASS');
 $connection = new $db_class(
@@ -14,5 +15,7 @@ $connection = new $db_class(
               getenv('DATABASE'));
 
 $connection->connect();
-$usuario_model = new Models\Usuario($connection);
+$departamento_model = new models\Departamento($connection);
+$usuario_model = new models\Usuario($connection);
+
 
