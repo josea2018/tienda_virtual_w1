@@ -1,0 +1,9 @@
+create table usuarios
+(
+	id serial,
+	cedula varchar primary key not null,	
+	nombre varchar not null,
+	email varchar not null,
+	contrasenna varchar not null,
+	tipo varchar(1) not null
+);
