@@ -1,6 +1,6 @@
 <?php
   include_once '../DbSetup.php';
-  session_start();
+  //session_start();
   //var_dump($_SESSION);
   $datosSession = $usuario_model->buscarNombreActual($_SESSION['usuario_cedula']);
   //echo $datosSession['nombre'];
@@ -10,7 +10,7 @@
 <h3>Bienvenido <?= $nombreUsuarioActual ?></h3>
 <ul>
   <li>
-    <a href="../home">Home</a>
+    <a href="../home">Inicio</a>
     <a href="../seguridad/logout.php">Salir</a>
   </li>
 </ul>
