@@ -33,3 +33,23 @@ REFERENCES departamentos (id_departamento);
 INSERT INTO public.articulos(
 	id_articulo, id_departamento, descripcion, precio, existencia)
 	VALUES ('1', '1', 'Camiseta sport', 8000, 4);
+
+create table lineas_orden
+(
+
+	cedula_usuario varchar not null,
+	id_orden int not null,
+	id_articulo varchar not null,
+	id_departamento varchar not null,	
+	descripcion varchar not null,
+	precio double precision not null,
+	cantidad int not null
+);
+//ALTER TABLE lineas_orden ADD CONSTRAINT FK_LineasOrden_Cedula_Usuario FOREIGN KEY(cedula_usuario)
+//REFERENCES usuarios (cedula);
+
+
+
+
+
+
