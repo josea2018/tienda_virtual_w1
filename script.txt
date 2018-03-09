@@ -20,13 +20,16 @@ create table departamentos
 create table articulos
 (
 	id_articulo varchar primary key not null,
-	id_departamento varchar foreign key not null,
+	id_departamento varchar not null,
 	descripcion varchar not null,
 	precio double precision not null,
 	existencia int not null
 );
 
-
-
-ALTER TABLE articulos ADD CONSTRAINT FK_Articulos_CATE_PROD_Departamento FOREIGN KEY(id_departamento)
+ALTER TABLE articulos ADD CONSTRAINT FK_Articulos_ID_DEPARTAMENTO_Departamento FOREIGN KEY(id_departamento)
 REFERENCES departamentos (id_departamento);
+
+
+INSERT INTO public.articulos(
+	id_articulo, id_departamento, descripcion, precio, existencia)
+	VALUES ('1', '1', 'Camiseta sport', 8000, 4);
