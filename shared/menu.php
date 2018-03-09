@@ -3,6 +3,8 @@
   //session_start();
   //var_dump($_SESSION);
   $datosSession = $usuario_model->buscarNombreActual($_SESSION['usuario_cedula']);
+  $tipoUsuario = $datosSession['tipo'];
+  echo $tipoUsuario;
   //echo $datosSession['nombre'];
   $nombreUsuarioActual = $datosSession['nombre'];
   //echo $nombreUsuarioActual;
