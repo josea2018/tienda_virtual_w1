@@ -4,4 +4,5 @@
 	      <a style="font-size: 25px;" href="../orden/menu.php">Consultar orden</a>
 	  </li>
 	</ul>
+	<hr width="35%" />
 </div>
