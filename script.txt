@@ -50,6 +50,24 @@ create table lineas_orden
 
 
 
+create table consecutivo
+(
+	id_consecutivo serial primary key not null,
+	cedula_usuario varchar not null
+);
+
+create table ordenes
+(
+	
+	id_consecutivo int not null,
+	cedula_usuario varchar not null,
+	id_orden int not null,
+	id_articulo varchar not null,
+	id_departamento varchar not null,	
+	descripcion varchar not null,
+	precio double precision not null,
+	cantidad int not null
+);
 
 
 

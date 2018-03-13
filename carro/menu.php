@@ -1,4 +1,6 @@
 <?php
+  include '../seguridad/verificar_session.php';
+  include '../DbSetup.php';
   $titulo = 'Carrito de compras';
   include '../shared/header.php';
 ?>
@@ -7,11 +9,16 @@
   <li>
     <a href="../home/index.php">Inicio</a>
   </li>
+  <li>
+    <?php
+      $cedula_usuario = $_SESSION['usuario_cedula'];
+      echo "<a href='../carro/checkout.php?cedula_usuario=" . $cedula_usuario . "'>Checkout</a>";
+    ?>
+  </li>
 </ul>
 
 <?php
-  include '../seguridad/verificar_session.php';
-  include '../DbSetup.php';
+  
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       $cedula_usuario = $_SESSION['usuario_cedula'];
@@ -40,7 +47,7 @@
         $lineasOrden = $lineaOrden_model->listarLineasOrden();
         if($lineasOrden == null)
         {
-          echo "<h2>No hay lineas en el carro</h2>";
+          echo "<h2>No hay artículos en el carro</h2>";
         }else{
           $cantidadLineasOrden = count($lineasOrden);   
           $id_orden = $lineasOrden[$cantidadLineasOrden-1]['id_orden'];
