@@ -87,23 +87,20 @@ id_articulo varchar primary key not null,
 	existencia int not null
 
 
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('1', '1', 'Medias M', 600, 20);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('2', '1', 'Pantalon cargo', 25000, 5);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('3', '1', 'Camisa Tommy', 18000, 4);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('4', '2', 'Sandalias Tommy', 12000, 6);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('5', '2', 'Reloj Genius', 32000, 9);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('6', '2', 'Zapatos negros', 9000, 15);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('7', '3', 'Crocs', 22000, 8);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('8', '4', 'Short cargo', 11000, 6);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('9', '5', 'Cortina verde', 5000, 18);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('10', '5', 'Vaso de vidrio', 500, 25);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('11', '6', 'Balón Brasuca', 28000, 6);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('12', '6', 'Biblicleta de ruta', 1550000, 2);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('13', '7', 'Desk. Dell Inspiron', 483000, 2);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('14', '7', 'Laptop. Dell', 345000, 4);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('15', '8', 'Panasonic 32 pulgadas', 182000, 6);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('16', '9', 'Samsung Galaxy', 167000, 7);
-INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('17', '9', 'Huawei Y7', 188000, 9);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('1', '1', 'Pantalon cargo', 25000, 5);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('2', '1', 'Camisa Tommy', 18000, 4);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('3', '2', 'Sandalias Tommy', 12000, 6);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('4', '2', 'Zapatos negros', 9000, 15);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('5', '3', 'Crocs', 22000, 8);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('6', '3', 'Short cargo', 11000, 6);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('7', '5', 'Cortina verde', 5000, 18);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('8', '6', 'Balón Brasuca', 28000, 6);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('9', '6', 'Biblicleta de ruta', 1550000, 2);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('10', '7', 'Desk. Dell Inspiron', 483000, 2);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('11', '7', 'Laptop. Dell', 345000, 4);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('12', '8', 'Panasonic 32 pulgadas', 182000, 6);
+INSERT INTO public.articulos(id_articulo, id_departamento, descripcion, precio, existencia) VALUES ('13', '9', 'Samsung Galaxy', 167000, 7);
+
 
 
 
