@@ -1,9 +1,10 @@
 <?php
   include '../seguridad/verificar_session.php';
   include '../DbSetup.php';
-
+  echo "<li><a href=../home/index.php>Inicio</a><br></li>";
+  echo "<li><a href=../carro/menu.php>Carro de compras</a></li>";
   $cedula_usuario = isset($_GET['cedula_usuario']) ? $_GET['cedula_usuario'] : '';
-  echo $cedula_usuario;
+  //echo $cedula_usuario;
   $lineasOrden = $lineaOrden_model->listarLineasOrden();
   
   if($lineasOrden == null){

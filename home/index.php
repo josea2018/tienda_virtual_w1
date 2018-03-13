@@ -7,5 +7,6 @@
   include '../departamento/index.php';
   include '../articulo/index.php';
   include '../carro/index.php';
+  include '../orden/index.php';
   include '../shared/footer.php';
 ?>

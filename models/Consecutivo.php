@@ -27,6 +27,13 @@ namespace models
       return $this->connection->getResults($result);
     }
 
+    public function listarConsecutivosUsuario($cedula_usuario)
+    {
+      $sql = "SELECT * FROM consecutivo WHERE cedula_usuario = '$cedula_usuario' ORDER BY id_consecutivo ASC";
+      $result = $this->connection->executeSql($sql);
+      return $this->connection->getResults($result);
+    }
+
 
   }
 
