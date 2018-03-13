@@ -1,11 +1,12 @@
 <?php
   $titulo = 'Administración de artículos';
+  $ruta = '../fondos/fondo-principal_2.jpg';
   include '../shared/header.php';
 ?>
 
 <ul>
-  <li>
-    <a href="../home/index.php">Inicio</a>
+  <li style="list-style:none;">
+    <a style="font-size: 20px;" class="btn btn-default" role="button" href="../home/index.php">Inicio</a>
   </li>
 </ul>
 
@@ -13,14 +14,14 @@
 
 <form method="POST">
 
-    <table border="1">
+    <table class="table table-hover" style="text-align: center;" border="1">
       <tr>
         <th>ID ARTÍCULO</th>
         <th>ID DEPARTAMENTO</th>
         <th>DESCRIPCIÓN</th>
         <th>PRECIO</th>
         <th>EXISTENCIA</th>
-        <th><a href="../articulo/nuevo.php">+</a></th>
+        <th><a style="font-size: 20px;" class="btn btn-success" role="button" href="../articulo/nuevo.php">+</a></th>
       </tr>
       <?php
         include '../DbSetup.php';
@@ -35,8 +36,8 @@
             echo "<td>" . $row['existencia'] . "</td>";
 
             echo "<td>" .
-                "<a href='../articulo/editar.php?id=" . $row['id_articulo'] . "'>Editar</a>".
-                "<a href='../articulo/eliminar.php?id=" . $row['id_articulo'] . "'>Eliminar</a>".
+                "<a style='font-size: 17px;' class='btn btn-info' role='button' href='../articulo/editar.php?id=" . $row['id_articulo'] . "'>Editar</a>".
+                "<a style='font-size: 16px;' class='btn btn-danger' role='button' href='../articulo/eliminar.php?id=" . $row['id_articulo'] . "'>Eliminar</a>".
                 "</td>";
           	echo "</tr>";
         }

@@ -2,17 +2,23 @@
   include '../seguridad/verificar_session.php';
   include '../DbSetup.php';
   $titulo = 'Carrito de compras';
+  $ruta = '../fondos/fondo-principal_2.jpg';
   include '../shared/header.php';
 ?>
 
 <ul>
-  <li>
-    <a href="../home/index.php">Inicio</a>
+  <li style="list-style:none;">
+    <a style="font-size: 20px;" class="btn btn-default" role="button" href="../home/index.php">Inicio</a>
   </li>
-  <li>
+  <li style="list-style:none;">
     <?php
       $cedula_usuario = $_SESSION['usuario_cedula'];
-      echo "<a href='../carro/checkout.php?cedula_usuario=" . $cedula_usuario . "'>Checkout</a>";
+      echo "<a style='font-size: 20px;' class='btn btn-default' role='button' href='../carro/checkout.php?cedula_usuario=" . $cedula_usuario . "'>Checkout</a>";
+    ?>
+  </li>
+  <li style="list-style:none;">
+    <?php
+      echo "<a style='font-size: 20px;'' class='btn btn-default' role='button' href=../articulo/lista_articulos.php>Lista de artículos</a>";
     ?>
   </li>
 </ul>
@@ -30,7 +36,7 @@
 
 <form method="POST">
 
-    <table border="1">
+    <table class="table table-hover" style="text-align: center;" border="1">
       <tr>
         <th>ID USUARIO</th>
         <th>ID ORDEN</th>
@@ -39,7 +45,7 @@
         <th>DESCRIPCIÓN</th>
         <th>PRECIO</th>
         <th>CANTIDAD</th>
-        <th><input type="submit" value="Borrar todo"></th>
+        <th><input type="submit" style="font-size: 17px;" class="btn btn-danger" value="Borrar todo"></th>
       </tr>
       <?php
         include '../DbSetup.php';
@@ -47,7 +53,8 @@
         $lineasOrden = $lineaOrden_model->listarLineasOrden();
         if($lineasOrden == null)
         {
-          echo "<h2>No hay artículos en el carro</h2>";
+          //echo "<h2>No hay artículos en el carro</h2>";
+          echo '<script language="javascript">alert("No hay artículos en el carro");</script>'; 
         }else{
           $cantidadLineasOrden = count($lineasOrden);   
           $id_orden = $lineasOrden[$cantidadLineasOrden-1]['id_orden'];
@@ -64,7 +71,7 @@
             echo "<td>" . $row['cantidad'] . "</td>";
 
             echo "<td>" .
-                  "<a href='../carro/eliminarUno.php?ido=".$id_orden . " &ida=".$row['id_articulo'] . " &usuario=".$row['cedula_usuario'] . "'>Eliminar</a>".
+                  "<a style='font-size: 17px;' class='btn btn-danger' href='../carro/eliminarUno.php?ido=".$id_orden . " &ida=".$row['id_articulo'] . " &usuario=".$row['cedula_usuario'] . "'>Eliminar</a>".
                 "</td>";
             echo "</tr>";
 

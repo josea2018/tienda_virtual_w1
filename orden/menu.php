@@ -1,6 +1,7 @@
 <?php
   include '../seguridad/verificar_session.php';
   include '../DbSetup.php';
+  $ruta = '../fondos/fondo-principal_2.jpg';
   $titulo = 'Consultar orden';
   include '../shared/header.php';
 ?>
@@ -8,10 +9,10 @@
 
 <form method="POST">
 
-    <a href="../home/index.php">Inicio</a><br><br>
+    <a style="font-size: 20px;" class="btn btn-default" role="button" role="button" href="../home/index.php">Inicio</a><br><br>
 
 
- <table border="1">
+ <table class="table table-hover" style="text-align: center;" border="1">
       <tr>
         <th>NUM. ORDEN</th>
         <th>ID USUARIO</th>
@@ -31,7 +32,8 @@
         $id_consecutivo = isset($_POST['id_consecutivo']) ? $_POST['id_consecutivo'] : '';
 
         if($id_consecutivo == 'Ordenes...' || $id_consecutivo == ''){
-            echo "<h3>No se logró, no existen ordenes seleccionadas</h3>";
+            //echo "<h3>No se logró, no existen ordenes seleccionadas</h3>";
+            echo '<script language="javascript">alert("No se logró, no existen ordenes seleccionadas");</script>'; 
         }else{
 
               $orden = $orden_model->listarOrden($id_consecutivo);
@@ -61,8 +63,8 @@
 </table>
 
 
-    <input type="submit" name="" value="Consultar"><br> 
-    <label>Código de orden: </label>
+    <input type="submit" style='font-size: 17px;' class='btn btn-info' name="" value="Consultar"><br> 
+    <label for="usr">Código de orden: </label>
 
     <SELECT NAME="id_consecutivo">
       <option>Ordenes...</option>

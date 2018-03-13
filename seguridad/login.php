@@ -1,5 +1,6 @@
 <?php
   $titulo = 'Login';
+  $ruta = '../fondos/fondo-login.jpg';
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     include '../DbSetup.php';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -11,21 +12,44 @@
       var_dump($_SESSION);
       return header("Location: ../home");
     } else {
-      echo "<h3>Usuario o contraseña invalido</h3>";
+      //echo "<h3>Usuario o contraseña invalido</h3>";
+      echo '<script language="javascript">alert("Usuario o contraseña invalido");</script>'; 
+
     }
   }
   include '../shared/header.php';
 ?>
-  <form method="POST">
-    <label>Email: </label>
-    <input type="email" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : ''; ?>">
-    <br>
-    <label>Contraseña:</label>
-    <input type="password" name="contrasenna">
-    <br>
-    <input type="submit" name="" value="Login">
-    <a href="../seguridad/registro.php">Registrarse</a>
-  </form>
+
+
+
+
+<div class="container" align="center" style="padding-top: 8%";>
+
+
+    <form method="POST">
+      
+      <div class="col-md-3">
+        <label for="usr">Email: </label>
+        <input type="email" class="form-control input-normal" id="exampleInputEmail1" placeholder="Correo" name="email" value="<?= isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+      </div>
+      <br>
+
+      
+      <div class="col-md-3">
+        <label for="pwd">Contraseña:</label>
+        <input type="password" class="form-control input-normal" id="exampleInputPassword1" placeholder="Contraseña" name="contrasenna">
+      </div>
+      <br>
+
+      <input class="btn btn-primary btn-lg" type="submit" name="" value="Login">
+      <a href="../seguridad/registro.php" class="btn btn-default" role="button">Registrarse</a>
+   </form>
+
+</div>
+
+
+
+
 <?php
   include '../shared/footer.php';
 ?>
