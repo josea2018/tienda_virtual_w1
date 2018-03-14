@@ -66,7 +66,7 @@
 
     <br>
     <label>Código departamento: </label>
-    <!--<input type="text" name="id_departamento">-->
+    <input type="submit" name="" value="Guardar">
     <SELECT NAME="id_departamento">
       <option>Opciones...</option>
       <?php
