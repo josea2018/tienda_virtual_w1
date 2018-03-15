@@ -1,6 +1,6 @@
 <div class="container" align="center" style="padding-top: 3%";>
 	<ul>
-	  <li>
+	  <li style="list-style:none;">
 	  	<?php
 	  		include_once '../DbSetup.php';
 	  		$datosSession = $usuario_model->buscarNombreActual($_SESSION['usuario_cedula']);
@@ -9,5 +9,6 @@
 	    ?>
 	  </li>
 	</ul>
+	<hr width="35%" />
 </div>
 
