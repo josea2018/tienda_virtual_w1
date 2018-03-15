@@ -1,5 +1,6 @@
 <?php
   include '../seguridad/verificar_session.php';
+  $ruta = '../fondos/fondo-principal_2.jpg';
   include '../DbSetup.php';
   $id = isset($_GET['id']) ? $_GET['id'] : '';
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -16,6 +17,7 @@
   include '../shared/header.php';
 ?>
 
+<div class="container" align="center" style="padding-top: 3%";>
   <form method="POST">
 
     <?php
@@ -25,16 +27,22 @@
       $articulo = $articulo_model->buscarArticulo($id);
       //var_dump($articulo);  <input type="text" name="descripcion"> <input type="number" name="precio">   <input type="number" name="existencia"> 
     ?>
-
-    <label>Descripción:</label>
-    <input type="text" name="descripcion" value="<?php echo $articulo['descripcion']; ?>">
+    <div class="col-md-3">
+      <label for="usr">Descripción:</label>
+      <input type="text" class="form-control input-normal" placeholder="Descripción" name="descripcion" value="<?php echo $articulo['descripcion']; ?>">
+    </div>
     <br>
-    <label>Precio:</label>
-    <input type="number" name="precio" value="<?php echo $articulo['precio']; ?>">
+    <div class="col-md-3">
+      <label for="usr">Precio:</label>
+      <input type="number" class="form-control input-normal" placeholder="Precio" name="precio" value="<?php echo $articulo['precio']; ?>">
+    </div>
     <br>
-    <label>Existencia:</label>
-    <input type="number" name="existencia" value="<?php echo $articulo['existencia']; ?>">
+    <div class="col-md-3">
+      <label for="usr">Existencia:</label>
+      <input type="number" class="form-control input-normal" placeholder="Existencia" name="existencia" value="<?php echo $articulo['existencia']; ?>">
+    </div>
     <br>
-    <input type="submit" value="Guardar">
-    <a href="../articulo/menu.php">Administración de artículos</a>
+    <input style="font-size: 17px;" class="btn btn-success"  type="submit" value="Guardar">
+    <a style="font-size: 17px;" class="btn btn-default" role="button" href="../articulo/menu.php">Administración de artículos</a>
   </form>
+</div>

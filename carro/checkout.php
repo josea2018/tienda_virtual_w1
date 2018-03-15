@@ -1,14 +1,18 @@
 <?php
   include '../seguridad/verificar_session.php';
   include '../DbSetup.php';
-  echo "<li><a href=../home/index.php>Inicio</a><br></li>";
-  echo "<li><a href=../carro/menu.php>Carro de compras</a></li>";
+  $titulo = 'Checkout';
+  $ruta = '../fondos/fondo-principal_2.jpg';
+  include '../shared/header.php';
+  echo "<li style='list-style:none;'><a style='font-size: 20px;' class='btn btn-default' role='button' href=../home/index.php>Inicio</a><br></li>";
+  echo "<li style='list-style:none;'><a style='font-size: 20px;' class='btn btn-default' role='button' href=../carro/menu.php>Carro de compras</a></li>";
   $cedula_usuario = isset($_GET['cedula_usuario']) ? $_GET['cedula_usuario'] : '';
   //echo $cedula_usuario;
   $lineasOrden = $lineaOrden_model->listarLineasOrden();
   
   if($lineasOrden == null){
-       echo "<h2>No hay artículos en el carro para generar la orden</h2>";
+      // echo "<h2>No hay artículos en el carro para generar la orden</h2>";
+       echo '<script language="javascript">alert("No hay artículos en el carro");</script>';
     }else{
     	$consecutivo_model->insertarConsecutivo($cedula_usuario);
     	$consecutivos = $consecutivo_model->listarConsecutivos();
@@ -39,7 +43,7 @@
   //return header("Location: ../carro/menu.php");
 ?>
 
-    <table border="1">
+    <table  class="table table-hover" style="text-align: center;" border="1">
       <tr>
       	<th>NUM. ORDEN</th>
         <th>ID USUARIO</th>
